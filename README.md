@@ -5,5 +5,6 @@
 * Helps me learn the Go language :)
 ## Installation:
 ```
-go get github.org/rabbitfind/rabbitfind
+download rabbitfind.go
+go run rabbitfind.go
 ```
