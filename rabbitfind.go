@@ -7,6 +7,7 @@ import (
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
+	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/widget"
 )
 
@@ -48,8 +49,15 @@ func main() {
 	a := app.New()
 	w := a.NewWindow("RabbitFind")
 
-	entry := newRabbitEntry()
+	box := container.NewVBox()
+	box.Add(widget.NewLabel("Press ESC to search"))
+	rabbitFindEntry := newRabbitEntry()
+	rabbitFindEntry.SetPlaceHolder("Type stuff here...")
+	rabbitFindEntry.OnChanged = func(s string) {
+		log.Println(s)
+	}
+	box.Add(rabbitFindEntry)
 
-	w.SetContent(entry)
+	w.SetContent(box)
 	w.ShowAndRun()
 }
