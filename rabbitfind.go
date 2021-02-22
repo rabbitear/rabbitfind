@@ -105,7 +105,6 @@ func main() {
 			sugslice = sugslice[:10]
 		}
 		rabbitFindSelectEntry.SetOptions(sugslice)
-		w.Canvas().Focus(rabbitFindSelectEntry)
 
 		for i, value := range sugslice {
 			fmt.Printf("i=%d:%s  ", i, value)
@@ -113,6 +112,7 @@ func main() {
 				break
 			}
 		}
+		w.Canvas().Focus(rabbitFindSelectEntry)
 	}
 	box.Add(rabbitFindSelectEntry)
 
