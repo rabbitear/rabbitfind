@@ -111,16 +111,20 @@ func main() {
 			sugslice = sugslice[:10]
 		}
 		rabbitFindSelectEntry.SetOptions(sugslice)
+
 		for i, value := range sugslice {
 			fmt.Printf("i=%d:%s  ", i, value)
 			if i == 10 {
 				break
 			}
 		}
+		w.Canvas().Focus(rabbitFindSelectEntry)
 	}
 	box.Add(rabbitFindSelectEntry)
 
 	w.Resize(fyne.NewSize(500, 420))
 	w.SetContent(box)
+
+	w.Canvas().Focus(rabbitFindSelectEntry)
 	w.ShowAndRun()
 }
